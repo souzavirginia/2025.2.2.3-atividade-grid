@@ -308,6 +308,7 @@ body {
 
 @media (min-width: 768px) {
     
+
     body {
         display: block; 
     }
@@ -357,14 +358,20 @@ body {
 
 @media (min-width: 1024px) {
     
-    body {
-        grid-template-columns: 280px 1fr; 
+    .sidebar {
+        width: 280px; 
     }
     
     .content {
+        margin-left: 280px;
         padding: 50px; 
     }
 
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px; 
+    }
+    
     .skill-cards-grid,
     .interest-cards-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
