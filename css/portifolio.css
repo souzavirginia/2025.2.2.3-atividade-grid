@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Delius+Swash+Caps&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -33,7 +32,7 @@ body {
 
 .sidebar {
     background-color: var(--sidebar-color);
-    padding: 40px 20px;   
+    padding: 0 20px;
     position: fixed; 
     top: 0;
     left: 0;
@@ -42,13 +41,12 @@ body {
     z-index: 1000;
     display: flex; 
     flex-direction: row; 
-    justify-content: space-around; 
-    align-items: center;  
+    justify-content: center; 
+    align-items: center;
     border-right: none; 
     border-bottom: 1px solid #333; 
     min-height: auto;
 }
-
 
 .profile-icon {
     display: none; 
@@ -94,23 +92,6 @@ body {
 .nav-menu a:hover {
     color: var(--accent-color);
 }
-
-.social-links {
-    margin-top: auto; 
-    display: flex;
-    gap: 20px;
-}
-
-.social-links a {
-    color: var(--text-color);
-    font-size: 1.5em;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-}
-
 
 /* CONTEÚDO PRINCIPAL */
 
@@ -302,6 +283,41 @@ body {
     transform: translateY(-3px);
 }
 
+
+/* FOOTER */
+
+.main-footer {
+    background-color: #bacee6;
+    color: #999;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-footer p {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.main-footer .social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.main-footer .social-links a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.main-footer .social-links a:hover {
+    color: var(--accent-color);
+}
+
+
 /* ========================================================== */
 /* === BREAKPOINT: TABLET (Mínimo 768px) === */
 /* ========================================================== */
@@ -345,11 +361,24 @@ body {
     }
 
     .content {
+        max-width: 1200px;
         margin-left: 250px; 
+        margin-right: auto;
         padding: 40px; 
         padding-top: 40px; 
     }
-    
+
+    .main-footer {
+        max-width: 1200px;
+        margin-left: 250px; 
+        margin-right: auto; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+
 }
 
 /* ========================================================== */
@@ -363,19 +392,21 @@ body {
     }
     
     .content {
+        max-width: 1200px; 
         margin-left: 280px;
+        margin-right: auto;
         padding: 50px; 
     }
 
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 30px; 
-    }
-    
-    .skill-cards-grid,
-    .interest-cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-        gap: 20px; 
+    .main-footer {
+        max-width: 1200px; 
+        margin-left: 280px; 
+        margin-right: auto;      
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px; 
+        padding-right: 50px;
     }
 
 }
