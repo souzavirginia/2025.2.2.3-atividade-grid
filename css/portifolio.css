@@ -30,6 +30,7 @@ body {
 }
 
 /* BARRA LATERAL */
+
 .sidebar {
     background-color: var(--sidebar-color);
     padding: 40px 20px;
@@ -41,6 +42,7 @@ body {
 }
 
 /* ... ÍCONE E MENU  */
+
 .profile-icon {
     width: 120px;
     height: 120px;
@@ -89,6 +91,7 @@ body {
 
 
 /* CONTEÚDO PRINCIPAL */
+
 .content {
     padding: 20px; 
     grid-column: 1 / -1; 
@@ -122,10 +125,16 @@ body {
 }
 
 /* GRADE DE CARTÕES  */
+
 .cards-grid {
     display: grid;
     grid-template-columns: 1fr; 
     gap: 20px; 
+}
+
+.skill-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 15px;
 }
 
 .card {
@@ -137,20 +146,20 @@ body {
 }
 
 .project-link {
-    /* Herda o estilo do .card, mas o link inteiro é o contêiner flex */
+
     display: flex;
     flex-direction: column;
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    color: var(--text-color); /* Mantém a cor do texto padrão */
+    text-decoration: none; 
+    color: var(--text-color); 
     overflow: hidden; 
     
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-link:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra mais destacada */
-    border-left-color: var(--text-color); /* Efeito de destaque na borda */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    border-left-color: var(--text-color); 
 }
 
 .project-tags span {
@@ -182,11 +191,9 @@ body {
     transition: transform 0.3s;
 }
 
-
 .project-link:hover .project-thumbnail img {
     transform: scale(1.05);
 }
-
 
 .project-info {
     flex-grow: 1; 
@@ -207,14 +214,76 @@ body {
     opacity: 0.8;
 }
 
-
 .project-tags {
     margin-top: auto;
+}
+
+/* SKILLS */
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 15px;
+    border-left: none; 
+    border-bottom: 5px solid var(--accent-color); 
+}
+
+.skill-icon {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.skill-item p {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0;
+}
+
+.skill-item:hover {
+    background-color: #333333; 
+    transform: translateY(-3px);
+}
+
+.skill-item:hover .skill-icon {
+    color: var(--text-color);
+}
+
+/* INTERESSES */
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 15px;
+    border-left: none; 
+    border-bottom: 5px solid var(--accent-color); 
+}
+
+.interest-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.interest-item p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.interest-item:hover {
+    background-color: #333333;
+    transform: translateY(-3px);
 }
 
 /* ========================================================== */
 /* === BREAKPOINT: TABLET (Mínimo 768px) === */
 /* ========================================================== */
+
 @media (min-width: 768px) {
     
     body {
@@ -239,12 +308,20 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px; 
     }
+
+    .skill-cards-grid,
+    .interest-cards-grid { 
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 15px;
+    }
+
 }
 
 
 /* ========================================================== */
 /* === BREAKPOINT: DESKTOP (Mínimo 1024px) === */
 /* ========================================================== */
+
 @media (min-width: 1024px) {
     
     body {
@@ -253,6 +330,12 @@ body {
     
     .content {
         padding: 50px; 
+    }
+
+    .skill-cards-grid,
+    .interest-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        gap: 20px; 
     }
 
 }
