@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Delius+Swash+Caps&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* GERAL */
+
+:root {
+    --bg-color: #bacee6; 
+    --text-color: #f0f0f0; 
+    --sidebar-color: #000000; 
+    --card-color: #212121; 
+    --accent-color: #ddafc4; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Overlock', 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    display: grid; 
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    background-color: var(--sidebar-color);
+    padding: 40px 20px;
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #333;
+    min-height: 100vh;
+}
+
+/* ... ÍCONE E MENU  */
+.profile-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin-bottom: 30px;
+    border: 3px solid var(--accent-color); 
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-menu a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 0;
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: auto; 
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+.content {
+    padding: 20px; 
+    grid-column: 1 / -1; 
+}
+
+.hero-section {
+    margin-bottom: 50px;
+}
+
+.hero-section h1 {
+    font-size: 2.5em; 
+    margin-bottom: 5px;
+    color: #ddafc4;
+    font-family: 'Sour Gummy';
+}
+
+.email {
+    color: #999;
+}
+
+.content-block {
+    margin-bottom: 50px; 
+}
+
+.content-block h2 {
+    font-size: 1.3em; 
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color); 
+    display: inline-block; 
+    padding-bottom: 5px;
+}
+
+/* GRADE DE CARTÕES  */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+}
+
+.card {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    border-left: 5px solid var(--accent-color); 
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-tags span {
+    display: inline-block;
+    background-color: #3a3a3a;
+    color: #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/* ========================================================== */
+/* === BREAKPOINT: TABLET (Mínimo 768px) === */
+/* ========================================================== */
+@media (min-width: 768px) {
+    
+    body {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .sidebar {
+        display: flex; 
+        grid-column: 1 / 2;
+    }
+
+    .content {
+        padding: 40px; 
+        grid-column: 2 / 3;
+    }
+    
+    .hero-section h1 {
+        font-size: 3em; 
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px; 
+    }
+}
+
+
+/* ========================================================== */
+/* === BREAKPOINT: DESKTOP (Mínimo 1024px) === */
+/* ========================================================== */
+@media (min-width: 1024px) {
+    
+    body {
+        grid-template-columns: 280px 1fr; 
+    }
+    
+    .content {
+        padding: 50px; 
+    }
+
+}
